@@ -1,4 +1,7 @@
 "use strict";
+
+require('dotenv').config();
+
 const form = document.querySelector('#form');
 const error = document.querySelector('.errors');
 const dark = document.querySelector('.dark-mode');
@@ -80,7 +83,7 @@ if (dark) {
     });
 }
 async function fetchWeather(cityName) {
-    const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=43e800ab56470d9d19100d4c09d2da48`);
+    const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${process.env.API_KEY}`);
     const weather = await data.json();
     return weather;
 }

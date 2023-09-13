@@ -170,7 +170,7 @@ if (dark) {
 }
 
 async function fetchWeather<T extends string>(cityName: T): WeatherPromise {
-    const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=43e800ab56470d9d19100d4c09d2da48`);
+    const data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${API_KEY}`);
 
     const weather: WeatherInfo = await data.json();
 
